@@ -1,0 +1,23 @@
+<div class="playlist-wrap">
+    <h2>Angular playlist</h2>
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+          <mat-cell *matCellDef="let sound">{{ sound.id }}</mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="name" class="cursorPointer">
+          <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+          <mat-cell *matCellDef="let sound" (click)="playSound(sound)">{{ sound.name }}</mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="filename">
+          <mat-header-cell *matHeaderCellDef>Filename</mat-header-cell>
+          <mat-cell *matCellDef="let sound">{{ sound.filename }}</mat-cell>
+        </ng-container>
+    
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+    <app-sound-player *ngIf="selectedSound" [selectedSound]="selectedSound"></app-sound-player>
+</div>
