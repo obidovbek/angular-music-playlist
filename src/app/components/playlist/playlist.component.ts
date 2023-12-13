@@ -15,12 +15,5 @@ export class PlaylistComponent{
         { id: 2, name: 'Sound 2', filename: 'sound2.mp3' },
         { id: 3, name: 'Sound 3', filename: 'sound3.mp3' },
     ];
-    
     dataSource = new MatTableDataSource(this.playlist);
-    playSound(sound:IPlaylist){
-        // this.selectedSound=null;
-        // setTimeout(()=>{
-            this.selectedSound = sound;
-        // })
-    }
 }   
